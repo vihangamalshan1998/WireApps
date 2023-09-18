@@ -17,13 +17,23 @@ class StripeController extends Controller
             'line_items' => [
                 [
                     'price_data' => [
-                        'currency' => 'gbp',
+                        'currency' => 'usd',
                         'product_data' => [
-                            'name' => 'Send your money!!!!',
+                            'name' => 'Product 1',
                         ],
-                        'unit_amount' => 500,
+                        'unit_amount' => 5000, // Amount in cents (50 USD)
                     ],
-                    'quantity' => 1,
+                    'quantity' => 2,
+                ],
+                [
+                    'price_data' => [
+                        'currency' => 'usd',
+                        'product_data' => [
+                            'name' => 'Product 2',
+                        ],
+                        'unit_amount' => 1000, // Amount in cents (50 USD)
+                    ],
+                    'quantity' => 2,
                 ],
             ],
             'mode' => 'payment',
