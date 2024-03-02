@@ -1,8 +1,8 @@
-Huex-Assignment
+WireApps-Assignment
 
 Pull the code and rebuild the database
 
 Admin Login:-
 
-Email:- huex@test.com
+Email:- WireApps@test.com
 Password:- secret

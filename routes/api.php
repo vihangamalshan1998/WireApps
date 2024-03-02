@@ -1,11 +1,9 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\MarkController;
-use App\Http\Controllers\StripeController;
-use App\Http\Controllers\SubjectController;
 use App\Http\Controllers\Api\AuthController;
-use App\Http\Controllers\AssignmentController;
+use App\Http\Controllers\Api\CustomerController;
+use App\Http\Controllers\Api\MedicationController;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,18 +17,19 @@ use App\Http\Controllers\AssignmentController;
  */
 
 Route::post('login', [AuthController::class, 'login']);
-Route::get('subject/get_all_subjects', [SubjectController::class, 'index']);
 
-Route::middleware('auth:sanctum')->group(function () {
-    Route::post('register', [AuthController::class, 'register']);
-    Route::post('active_user', [AuthController::class, 'activeUser']);
-    Route::post('deactive_user', [AuthController::class, 'deactiveUser']);
-    Route::get('get_student', [AuthController::class, 'getStudent']);
-    Route::get('get_rank', [MarkController::class, 'getRank']);
-    Route::resource('subject', SubjectController::class);
-    Route::resource('mark', MarkController::class);
-    Route::resource('assignment', AssignmentController::class);
+Route::group(['middleware' => 'auth:api'], function () {
+    // Medication Inventory Management
+    Route::get('/medications', [MedicationController::class, 'index']);
+    Route::get('/medications/{id}', [MedicationController::class, 'show']);
+    Route::post('/medications', [MedicationController::class, 'create']);
+    Route::put('/medications/{id}', [MedicationController::class, 'update']);
+    Route::delete('/medications/{id}', [MedicationController::class, 'destroy']);
+
+    // Customer Record Management
+    Route::get('/customers', [CustomerController::class, 'index']);
+    Route::get('/customers/{id}', [CustomerController::class, 'show']);
+    Route::post('/customers', [CustomerController::class, 'create']);
+    Route::put('/customers/{id}', [CustomerController::class, 'update']);
+    Route::delete('/customers/{id}', [CustomerController::class, 'destroy']);
 });
-Route::get('/payment', [StripeController::class, 'checkout']);
-Route::post('/session', [StripeController::class, 'session']);
-Route::get('/success', [StripeController::class, 'success']);

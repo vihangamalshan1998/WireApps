@@ -14,17 +14,9 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->enum('type', [User::TYPE_ADMIN, User::TYPE_TEACHER, User::TYPE_STUDENT, User::TYPE_USER]);
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->string('dob')->nullable(); // date of birth
+            $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('qualification')->nullable();
-            $table->string('class')->nullable();
-            $table->string('subject')->nullable();
-            $table->unsignedTinyInteger('active')->default(1);
-            $table->rememberToken();
             $table->timestamps();
         });
     }

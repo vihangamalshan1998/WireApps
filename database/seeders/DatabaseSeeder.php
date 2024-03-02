@@ -2,24 +2,23 @@
 
 namespace Database\Seeders;
 
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\User;
+use Database\Seeders\Traits\TruncateTable;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
 
+/**
+ * Class DatabaseSeeder.
+ */
 class DatabaseSeeder extends Seeder
 {
+
     /**
      * Seed the application's database.
      */
-    public function run(): void
+    public function run()
     {
-        User::create([
-            'first_name' => 'Super',
-            'last_name' => 'Admin',
-            'dob' => '2002-12-27',
-            'email' => 'huex@test.com',
-            'password' => Hash::make('secret'),
-        ]);
+        Model::unguard();
+        $this->call(AuthSeeder::class);
+        Model::reguard();
     }
 }

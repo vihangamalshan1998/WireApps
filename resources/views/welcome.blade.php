@@ -841,12 +841,6 @@
                         fill="#FF2D20" />
                 </svg>
             </div>
-            <div class="">
-                <form action="/session" method="POST">
-                    <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                    <button class="btn btn-success mt-5" type="submit" id="checkout-live-button">Pay Now</button>
-                </form>
-            </div>
         </div>
     </div>
     </div>
