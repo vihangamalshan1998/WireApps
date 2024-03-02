@@ -23,7 +23,8 @@ To run this project locally, follow these steps:
 6. Update the database settings in the .env file according to your local environment.
 7. Migrate the database:
 8. Seed the database with mock data:
-
+9. ```bash(for add passport)
+   php artisan passport:install
 
 ### Running the Server
 
@@ -62,3 +63,7 @@ The following endpoints are available:
 ## Testing
 
 You can use the provided Postman collection for testing the API endpoints.
+
+Email: admin@gmail.com, Password: secret    (Admin)
+Email: manager@gmail.com, Password: secret  (Manager)
+Email: cashier@gmail.com, Password: secret  (Cashier)

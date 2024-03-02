@@ -1,0 +1,492 @@
+{
+	"info": {
+		"_postman_id": "8eea078a-3cef-45b9-8dca-87efbfbedc2f",
+		"name": "WireApps",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15337672"
+	},
+	"item": [
+		{
+			"name": "USER RELATED",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@gmail.com\",\r\n    \"password\":\"secret\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Medication",
+			"item": [
+				{
+					"name": "Get all medication",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmZmYjk3MDZjYWFhNDJmOGQyYWNkMzY1NGY3MzcyYzYxMTAyN2MzY2U2OWVhYzE1MGZmYmRkOGNhNTdjMDNmOTJhMTE5OWQxN2VhYWExZWEiLCJpYXQiOjE3MDk0MDYyNDIuMTk1NDQ0LCJuYmYiOjE3MDk0MDYyNDIuMTk1NDQ2LCJleHAiOjE3NDA5NDIyNDIuMDU5MzksInN1YiI6IjEiLCJzY29wZXMiOltdfQ.J4LCtxpP4SGsSKOfPujZSp2THDZRPdWK1X_1knf-VF1JVo1zgyzN0HH0of3wkhJTO0-x539DQ8LOE7QufeWb-3C8SjLfzGEOrs55PjWeO951ExkLAtwS_MTdzooACF1an07eswZjSLIX-WY9x-YpcKI09Dfb3gc_egaHhWhEQwCcJbZpWeR8Vrw7NRNtw51qvoZZWVcHCpC_tXr11eoAXL23S9nAaBYte_e32Zl5hk2yh2w0YAzMaejtf2VzTH72Lsr0RVL386nUmqCuJmO_7KW6zuE0oQHZ4mF0UZMC_rswnLurJdoJ94b02CneA3KUhOLkp6yLIpUw3oZfOlvPsgMiF21rQdJoJ7W58AvZI9LFa-eYrQ3lUFWtuiPpAw9VGpXj5hyqsle5uok6zwycqpA2qdyE4wMNCprIAjk8yPp2055EIXV6tllIs7lDgm8ET1NokBJ-pxlSN9Up-xH4yT6IVO0eTGPrwdUQecRg0r79HhuFvwBxmd8IKTMBQvqVIllESe_uo6ifD43bgj6A8rVHTAEKDDmM1h5kyxvqUIOEDm6XdC9bABJE2vWXGYP4yEYgEP2LWUNL6T74Y7Wp3iAszGt8Gw9IPyOsMqsbhlsJt0wSlDawvKTWtEMySLfn6N6lE5i-bftY5mYa0-kmfrhKNuiM-o-2W7c-dMDqo2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/medications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"medications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a medication",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmZmYjk3MDZjYWFhNDJmOGQyYWNkMzY1NGY3MzcyYzYxMTAyN2MzY2U2OWVhYzE1MGZmYmRkOGNhNTdjMDNmOTJhMTE5OWQxN2VhYWExZWEiLCJpYXQiOjE3MDk0MDYyNDIuMTk1NDQ0LCJuYmYiOjE3MDk0MDYyNDIuMTk1NDQ2LCJleHAiOjE3NDA5NDIyNDIuMDU5MzksInN1YiI6IjEiLCJzY29wZXMiOltdfQ.J4LCtxpP4SGsSKOfPujZSp2THDZRPdWK1X_1knf-VF1JVo1zgyzN0HH0of3wkhJTO0-x539DQ8LOE7QufeWb-3C8SjLfzGEOrs55PjWeO951ExkLAtwS_MTdzooACF1an07eswZjSLIX-WY9x-YpcKI09Dfb3gc_egaHhWhEQwCcJbZpWeR8Vrw7NRNtw51qvoZZWVcHCpC_tXr11eoAXL23S9nAaBYte_e32Zl5hk2yh2w0YAzMaejtf2VzTH72Lsr0RVL386nUmqCuJmO_7KW6zuE0oQHZ4mF0UZMC_rswnLurJdoJ94b02CneA3KUhOLkp6yLIpUw3oZfOlvPsgMiF21rQdJoJ7W58AvZI9LFa-eYrQ3lUFWtuiPpAw9VGpXj5hyqsle5uok6zwycqpA2qdyE4wMNCprIAjk8yPp2055EIXV6tllIs7lDgm8ET1NokBJ-pxlSN9Up-xH4yT6IVO0eTGPrwdUQecRg0r79HhuFvwBxmd8IKTMBQvqVIllESe_uo6ifD43bgj6A8rVHTAEKDDmM1h5kyxvqUIOEDm6XdC9bABJE2vWXGYP4yEYgEP2LWUNL6T74Y7Wp3iAszGt8Gw9IPyOsMqsbhlsJt0wSlDawvKTWtEMySLfn6N6lE5i-bftY5mYa0-kmfrhKNuiM-o-2W7c-dMDqo2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {18|KUn6abq3vlkUe3HNUyK2jYQzbzLxopYqRh78pOjF}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"sample\",\r\n    \"description\": \"sample\",\r\n    \"quantity\": \"10\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/medications",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"medications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one medication using id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmZmYjk3MDZjYWFhNDJmOGQyYWNkMzY1NGY3MzcyYzYxMTAyN2MzY2U2OWVhYzE1MGZmYmRkOGNhNTdjMDNmOTJhMTE5OWQxN2VhYWExZWEiLCJpYXQiOjE3MDk0MDYyNDIuMTk1NDQ0LCJuYmYiOjE3MDk0MDYyNDIuMTk1NDQ2LCJleHAiOjE3NDA5NDIyNDIuMDU5MzksInN1YiI6IjEiLCJzY29wZXMiOltdfQ.J4LCtxpP4SGsSKOfPujZSp2THDZRPdWK1X_1knf-VF1JVo1zgyzN0HH0of3wkhJTO0-x539DQ8LOE7QufeWb-3C8SjLfzGEOrs55PjWeO951ExkLAtwS_MTdzooACF1an07eswZjSLIX-WY9x-YpcKI09Dfb3gc_egaHhWhEQwCcJbZpWeR8Vrw7NRNtw51qvoZZWVcHCpC_tXr11eoAXL23S9nAaBYte_e32Zl5hk2yh2w0YAzMaejtf2VzTH72Lsr0RVL386nUmqCuJmO_7KW6zuE0oQHZ4mF0UZMC_rswnLurJdoJ94b02CneA3KUhOLkp6yLIpUw3oZfOlvPsgMiF21rQdJoJ7W58AvZI9LFa-eYrQ3lUFWtuiPpAw9VGpXj5hyqsle5uok6zwycqpA2qdyE4wMNCprIAjk8yPp2055EIXV6tllIs7lDgm8ET1NokBJ-pxlSN9Up-xH4yT6IVO0eTGPrwdUQecRg0r79HhuFvwBxmd8IKTMBQvqVIllESe_uo6ifD43bgj6A8rVHTAEKDDmM1h5kyxvqUIOEDm6XdC9bABJE2vWXGYP4yEYgEP2LWUNL6T74Y7Wp3iAszGt8Gw9IPyOsMqsbhlsJt0wSlDawvKTWtEMySLfn6N6lE5i-bftY5mYa0-kmfrhKNuiM-o-2W7c-dMDqo2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {18|KUn6abq3vlkUe3HNUyK2jYQzbzLxopYqRh78pOjF}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/medications/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"medications",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a medication",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmZmYjk3MDZjYWFhNDJmOGQyYWNkMzY1NGY3MzcyYzYxMTAyN2MzY2U2OWVhYzE1MGZmYmRkOGNhNTdjMDNmOTJhMTE5OWQxN2VhYWExZWEiLCJpYXQiOjE3MDk0MDYyNDIuMTk1NDQ0LCJuYmYiOjE3MDk0MDYyNDIuMTk1NDQ2LCJleHAiOjE3NDA5NDIyNDIuMDU5MzksInN1YiI6IjEiLCJzY29wZXMiOltdfQ.J4LCtxpP4SGsSKOfPujZSp2THDZRPdWK1X_1knf-VF1JVo1zgyzN0HH0of3wkhJTO0-x539DQ8LOE7QufeWb-3C8SjLfzGEOrs55PjWeO951ExkLAtwS_MTdzooACF1an07eswZjSLIX-WY9x-YpcKI09Dfb3gc_egaHhWhEQwCcJbZpWeR8Vrw7NRNtw51qvoZZWVcHCpC_tXr11eoAXL23S9nAaBYte_e32Zl5hk2yh2w0YAzMaejtf2VzTH72Lsr0RVL386nUmqCuJmO_7KW6zuE0oQHZ4mF0UZMC_rswnLurJdoJ94b02CneA3KUhOLkp6yLIpUw3oZfOlvPsgMiF21rQdJoJ7W58AvZI9LFa-eYrQ3lUFWtuiPpAw9VGpXj5hyqsle5uok6zwycqpA2qdyE4wMNCprIAjk8yPp2055EIXV6tllIs7lDgm8ET1NokBJ-pxlSN9Up-xH4yT6IVO0eTGPrwdUQecRg0r79HhuFvwBxmd8IKTMBQvqVIllESe_uo6ifD43bgj6A8rVHTAEKDDmM1h5kyxvqUIOEDm6XdC9bABJE2vWXGYP4yEYgEP2LWUNL6T74Y7Wp3iAszGt8Gw9IPyOsMqsbhlsJt0wSlDawvKTWtEMySLfn6N6lE5i-bftY5mYa0-kmfrhKNuiM-o-2W7c-dMDqo2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {18|KUn6abq3vlkUe3HNUyK2jYQzbzLxopYqRh78pOjF}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"sample1\",\r\n    \"description\": \"sample1\",\r\n    \"quantity\": \"15\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/medications/3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"medications",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Medication",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDBiNjNhNGZlOGExMjg3OWQ4ODJjZjNlMjk1MDFhMzIyNjIwNTI0YTI1MGUwZjQwNWQzOTQxODliYjFlMTYyNjkwMjIzNGQ0NWIwZDM5MzkiLCJpYXQiOjE3MDk0MDE0MDAuNjk3MjQyLCJuYmYiOjE3MDk0MDE0MDAuNjk3MjQ1LCJleHAiOjE3NDA5Mzc0MDAuNjUzMjIsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.acwZaHjEVLvYOV-Q_FMmK7qmMjVGOTB8LoeSwTUU375lb04DWjYsdWa7LCEpa_BoSejwOXAv8rVRgxJ5Di5ivvrT_TIjw3c0G6gXoarSUm6q1gZ6a6Z5BWp2Hq1OmarhstQST5Bp4DVgcFOWE3D57kmBdlu5Kl1A-SHxd-l-UP21kN0a6r7vnxAvj8irqxdPXsHUH24cJLNLaumfOcwQ8_nIwKIse2PA1SU06tw0V-1DPK4fQZHrKHZsQOg5T8XJ0K2bg-BdtxWnpjpOf_NKC6dn_ASVo9flvh078YpS3mHqNZekl-_YC_Hd_RkthCbKhsOt2ow1xIkOTDRShjbYJHzja4N8RUNCUVI0Y_T1yayokU3he-K6ngE2cludEcFTGCnFTnrTlbWiEbgplvyKz7owoPlN9qntiCaZMHaqeMOS-DAyayUAhSKqLXScT7wYIAKM6Y4GR94oIcT0053YnSkr_CuIPyRuCXquZyK-LywFhfZJDv40bQnP9E8Q4Rndzvq8ew5poAU0WW6RGMIuTpbxojZss48ucc2lgueHvpNHKDb7LkSRcAHwxe7kjXWpD279YIOtumgWJvaOUDTu7APN9CNjdty_NtlB28f7ugGRmYJ9T0D-oZhtrbJywrx5FIQG6PKrO_8glxlLuYeCdaw1SlGLncDbS37bfxJse_Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/medications/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"medications",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer",
+			"item": [
+				{
+					"name": "Get all Customers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYmZmYjk3MDZjYWFhNDJmOGQyYWNkMzY1NGY3MzcyYzYxMTAyN2MzY2U2OWVhYzE1MGZmYmRkOGNhNTdjMDNmOTJhMTE5OWQxN2VhYWExZWEiLCJpYXQiOjE3MDk0MDYyNDIuMTk1NDQ0LCJuYmYiOjE3MDk0MDYyNDIuMTk1NDQ2LCJleHAiOjE3NDA5NDIyNDIuMDU5MzksInN1YiI6IjEiLCJzY29wZXMiOltdfQ.J4LCtxpP4SGsSKOfPujZSp2THDZRPdWK1X_1knf-VF1JVo1zgyzN0HH0of3wkhJTO0-x539DQ8LOE7QufeWb-3C8SjLfzGEOrs55PjWeO951ExkLAtwS_MTdzooACF1an07eswZjSLIX-WY9x-YpcKI09Dfb3gc_egaHhWhEQwCcJbZpWeR8Vrw7NRNtw51qvoZZWVcHCpC_tXr11eoAXL23S9nAaBYte_e32Zl5hk2yh2w0YAzMaejtf2VzTH72Lsr0RVL386nUmqCuJmO_7KW6zuE0oQHZ4mF0UZMC_rswnLurJdoJ94b02CneA3KUhOLkp6yLIpUw3oZfOlvPsgMiF21rQdJoJ7W58AvZI9LFa-eYrQ3lUFWtuiPpAw9VGpXj5hyqsle5uok6zwycqpA2qdyE4wMNCprIAjk8yPp2055EIXV6tllIs7lDgm8ET1NokBJ-pxlSN9Up-xH4yT6IVO0eTGPrwdUQecRg0r79HhuFvwBxmd8IKTMBQvqVIllESe_uo6ifD43bgj6A8rVHTAEKDDmM1h5kyxvqUIOEDm6XdC9bABJE2vWXGYP4yEYgEP2LWUNL6T74Y7Wp3iAszGt8Gw9IPyOsMqsbhlsJt0wSlDawvKTWtEMySLfn6N6lE5i-bftY5mYa0-kmfrhKNuiM-o-2W7c-dMDqo2I",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8000/api/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a Customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDBiNjNhNGZlOGExMjg3OWQ4ODJjZjNlMjk1MDFhMzIyNjIwNTI0YTI1MGUwZjQwNWQzOTQxODliYjFlMTYyNjkwMjIzNGQ0NWIwZDM5MzkiLCJpYXQiOjE3MDk0MDE0MDAuNjk3MjQyLCJuYmYiOjE3MDk0MDE0MDAuNjk3MjQ1LCJleHAiOjE3NDA5Mzc0MDAuNjUzMjIsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.acwZaHjEVLvYOV-Q_FMmK7qmMjVGOTB8LoeSwTUU375lb04DWjYsdWa7LCEpa_BoSejwOXAv8rVRgxJ5Di5ivvrT_TIjw3c0G6gXoarSUm6q1gZ6a6Z5BWp2Hq1OmarhstQST5Bp4DVgcFOWE3D57kmBdlu5Kl1A-SHxd-l-UP21kN0a6r7vnxAvj8irqxdPXsHUH24cJLNLaumfOcwQ8_nIwKIse2PA1SU06tw0V-1DPK4fQZHrKHZsQOg5T8XJ0K2bg-BdtxWnpjpOf_NKC6dn_ASVo9flvh078YpS3mHqNZekl-_YC_Hd_RkthCbKhsOt2ow1xIkOTDRShjbYJHzja4N8RUNCUVI0Y_T1yayokU3he-K6ngE2cludEcFTGCnFTnrTlbWiEbgplvyKz7owoPlN9qntiCaZMHaqeMOS-DAyayUAhSKqLXScT7wYIAKM6Y4GR94oIcT0053YnSkr_CuIPyRuCXquZyK-LywFhfZJDv40bQnP9E8Q4Rndzvq8ew5poAU0WW6RGMIuTpbxojZss48ucc2lgueHvpNHKDb7LkSRcAHwxe7kjXWpD279YIOtumgWJvaOUDTu7APN9CNjdty_NtlB28f7ugGRmYJ9T0D-oZhtrbJywrx5FIQG6PKrO_8glxlLuYeCdaw1SlGLncDbS37bfxJse_Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {18|KUn6abq3vlkUe3HNUyK2jYQzbzLxopYqRh78pOjF}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"sample\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one Customer using id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDBiNjNhNGZlOGExMjg3OWQ4ODJjZjNlMjk1MDFhMzIyNjIwNTI0YTI1MGUwZjQwNWQzOTQxODliYjFlMTYyNjkwMjIzNGQ0NWIwZDM5MzkiLCJpYXQiOjE3MDk0MDE0MDAuNjk3MjQyLCJuYmYiOjE3MDk0MDE0MDAuNjk3MjQ1LCJleHAiOjE3NDA5Mzc0MDAuNjUzMjIsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.acwZaHjEVLvYOV-Q_FMmK7qmMjVGOTB8LoeSwTUU375lb04DWjYsdWa7LCEpa_BoSejwOXAv8rVRgxJ5Di5ivvrT_TIjw3c0G6gXoarSUm6q1gZ6a6Z5BWp2Hq1OmarhstQST5Bp4DVgcFOWE3D57kmBdlu5Kl1A-SHxd-l-UP21kN0a6r7vnxAvj8irqxdPXsHUH24cJLNLaumfOcwQ8_nIwKIse2PA1SU06tw0V-1DPK4fQZHrKHZsQOg5T8XJ0K2bg-BdtxWnpjpOf_NKC6dn_ASVo9flvh078YpS3mHqNZekl-_YC_Hd_RkthCbKhsOt2ow1xIkOTDRShjbYJHzja4N8RUNCUVI0Y_T1yayokU3he-K6ngE2cludEcFTGCnFTnrTlbWiEbgplvyKz7owoPlN9qntiCaZMHaqeMOS-DAyayUAhSKqLXScT7wYIAKM6Y4GR94oIcT0053YnSkr_CuIPyRuCXquZyK-LywFhfZJDv40bQnP9E8Q4Rndzvq8ew5poAU0WW6RGMIuTpbxojZss48ucc2lgueHvpNHKDb7LkSRcAHwxe7kjXWpD279YIOtumgWJvaOUDTu7APN9CNjdty_NtlB28f7ugGRmYJ9T0D-oZhtrbJywrx5FIQG6PKrO_8glxlLuYeCdaw1SlGLncDbS37bfxJse_Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {18|KUn6abq3vlkUe3HNUyK2jYQzbzLxopYqRh78pOjF}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Name\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/customers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a Customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDBiNjNhNGZlOGExMjg3OWQ4ODJjZjNlMjk1MDFhMzIyNjIwNTI0YTI1MGUwZjQwNWQzOTQxODliYjFlMTYyNjkwMjIzNGQ0NWIwZDM5MzkiLCJpYXQiOjE3MDk0MDE0MDAuNjk3MjQyLCJuYmYiOjE3MDk0MDE0MDAuNjk3MjQ1LCJleHAiOjE3NDA5Mzc0MDAuNjUzMjIsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.acwZaHjEVLvYOV-Q_FMmK7qmMjVGOTB8LoeSwTUU375lb04DWjYsdWa7LCEpa_BoSejwOXAv8rVRgxJ5Di5ivvrT_TIjw3c0G6gXoarSUm6q1gZ6a6Z5BWp2Hq1OmarhstQST5Bp4DVgcFOWE3D57kmBdlu5Kl1A-SHxd-l-UP21kN0a6r7vnxAvj8irqxdPXsHUH24cJLNLaumfOcwQ8_nIwKIse2PA1SU06tw0V-1DPK4fQZHrKHZsQOg5T8XJ0K2bg-BdtxWnpjpOf_NKC6dn_ASVo9flvh078YpS3mHqNZekl-_YC_Hd_RkthCbKhsOt2ow1xIkOTDRShjbYJHzja4N8RUNCUVI0Y_T1yayokU3he-K6ngE2cludEcFTGCnFTnrTlbWiEbgplvyKz7owoPlN9qntiCaZMHaqeMOS-DAyayUAhSKqLXScT7wYIAKM6Y4GR94oIcT0053YnSkr_CuIPyRuCXquZyK-LywFhfZJDv40bQnP9E8Q4Rndzvq8ew5poAU0WW6RGMIuTpbxojZss48ucc2lgueHvpNHKDb7LkSRcAHwxe7kjXWpD279YIOtumgWJvaOUDTu7APN9CNjdty_NtlB28f7ugGRmYJ9T0D-oZhtrbJywrx5FIQG6PKrO_8glxlLuYeCdaw1SlGLncDbS37bfxJse_Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {18|KUn6abq3vlkUe3HNUyK2jYQzbzLxopYqRh78pOjF}",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"sample1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/customers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Customer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiNDBiNjNhNGZlOGExMjg3OWQ4ODJjZjNlMjk1MDFhMzIyNjIwNTI0YTI1MGUwZjQwNWQzOTQxODliYjFlMTYyNjkwMjIzNGQ0NWIwZDM5MzkiLCJpYXQiOjE3MDk0MDE0MDAuNjk3MjQyLCJuYmYiOjE3MDk0MDE0MDAuNjk3MjQ1LCJleHAiOjE3NDA5Mzc0MDAuNjUzMjIsInN1YiI6IjEiLCJzY29wZXMiOltdfQ.acwZaHjEVLvYOV-Q_FMmK7qmMjVGOTB8LoeSwTUU375lb04DWjYsdWa7LCEpa_BoSejwOXAv8rVRgxJ5Di5ivvrT_TIjw3c0G6gXoarSUm6q1gZ6a6Z5BWp2Hq1OmarhstQST5Bp4DVgcFOWE3D57kmBdlu5Kl1A-SHxd-l-UP21kN0a6r7vnxAvj8irqxdPXsHUH24cJLNLaumfOcwQ8_nIwKIse2PA1SU06tw0V-1DPK4fQZHrKHZsQOg5T8XJ0K2bg-BdtxWnpjpOf_NKC6dn_ASVo9flvh078YpS3mHqNZekl-_YC_Hd_RkthCbKhsOt2ow1xIkOTDRShjbYJHzja4N8RUNCUVI0Y_T1yayokU3he-K6ngE2cludEcFTGCnFTnrTlbWiEbgplvyKz7owoPlN9qntiCaZMHaqeMOS-DAyayUAhSKqLXScT7wYIAKM6Y4GR94oIcT0053YnSkr_CuIPyRuCXquZyK-LywFhfZJDv40bQnP9E8Q4Rndzvq8ew5poAU0WW6RGMIuTpbxojZss48ucc2lgueHvpNHKDb7LkSRcAHwxe7kjXWpD279YIOtumgWJvaOUDTu7APN9CNjdty_NtlB28f7ugGRmYJ9T0D-oZhtrbJywrx5FIQG6PKrO_8glxlLuYeCdaw1SlGLncDbS37bfxJse_Y",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/customers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"customers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
